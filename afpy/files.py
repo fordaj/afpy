@@ -44,6 +44,9 @@ class Files:
                 os.mkdir(path)
             return path
 
+        def cwd(self, file):
+            return os.path.dirname(os.path.realpath(file))
+
     class Json:
         def __init__(self):
             pass
