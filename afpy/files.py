@@ -45,7 +45,7 @@ class Files:
             return path
 
         def cwd(self, file):
-            return os.path.dirname(os.path.realpath(file))
+            return Path(os.path.dirname(os.path.realpath(file)))
 
     class Json:
         def __init__(self):
