@@ -119,3 +119,14 @@ class Files:
                     print("Please enter a valid file path.")
                     file_path = Files().Path().format(input("Please provide path to " + file_type + ":"))
             return open(file_path)
+
+    class Name:
+        def replace(self, directory:str, original:str, replacement:str):
+            try:
+                file_list = os.listdir(directory)
+            except:
+                raise SystemError("Error: Not a valid directory")
+            directory = Path(directory)
+            for file in file_list:
+                if original in file:
+                    os.rename(directory/file, directory/file.replace(original, replacement))
