@@ -18,7 +18,7 @@ pip3 install --upgrade lowpy
 ```
 Or, a specific version of lowpy:
 ```
-pip3 install lowpy==0.4.3
+pip3 install --upgrade afpy
 ```
 Note: May have to wait a minute or so for the new files to upload to PyPI.
 
