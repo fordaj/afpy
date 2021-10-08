@@ -111,7 +111,7 @@ class Plot:
                 for self.extension in self.cfg[EXTENSIONS]:
                     if self.extension in self.file:
                         if 'csv' in self.extension:
-                            df = pd.read_csv(self.cwd/self.file)
+                            df = pd.read_csv(self.cwd/self.file, index_col=False)
                             if self.should_subplot:
                                 self.axes.append(plt.subplot(self.subplot_rows, self.subplot_cols, plot_counter))
                             self.get_y()
@@ -180,9 +180,10 @@ class Plot:
     def set_ylim(self):
         if YMIN in self.cfg:
             self.ymin = self.cfg[YMIN]
+            plt.ylim(bottom=self.ymin)
         if YMAX in self.cfg:
             self.ymax = self.cfg[YMAX]
-        plt.ylim([self.ymin, self.ymax])
+            plt.ylim(top=self.ymax)
 
     def set_grid(self):
         if GRID in self.cfg:
