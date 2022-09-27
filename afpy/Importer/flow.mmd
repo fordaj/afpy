@@ -1,0 +1,15 @@
+flowchart TD
+
+    subgraph Importer
+        subgraph Ticker["Ticker"]
+            Importer_getTradeabilityStatus_single("get_tradeability_status(ticker:str)->bool")
+            Importer_getTradeabilityStatus_multiple("get_tradeability_status(tickers:list[str])->dict{str,bool}")
+            Importer_getCurrentTickerData_single("get_current_ticker_data(ticker:str)->float")
+            Importer_getCurrentTickerData_multiple("get_current_ticker_data(tickers:list[str])->dict{str,float}")
+            Importer_getPrevioustTickerData_single("get_previous_ticker_data(ticker:str, timespan[datetime start, datetime stop])->float")
+            Importer_getPreviousTickerData_multiple("get_previous_ticker_data(tickers:list[str], timespan[datetime start, datetime stop])->dict{str,float}")
+            
+        end
+
+    end
+    

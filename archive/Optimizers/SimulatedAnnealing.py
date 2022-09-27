@@ -47,7 +47,8 @@ class SimulatedAnnealing:
                 # pick a random neighbor
                 newSolution = random.choice(neighbors)
                 # get the cost between the two solutions
-                cost = self.evaluate(self.solution) - self.evaluate(newSolution)
+                cost = self.evaluate(self.solution) - \
+                    self.evaluate(newSolution)
                 # if the new solution is better, accept it
                 if cost >= 0:
                     self.solution = newSolution

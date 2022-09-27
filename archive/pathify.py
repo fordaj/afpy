@@ -1,4 +1,4 @@
-from pathlib import Path
+from  import Path
 import os
 
 def pathify(path:str):

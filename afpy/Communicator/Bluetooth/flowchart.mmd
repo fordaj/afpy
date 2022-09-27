@@ -1,0 +1,42 @@
+flowchart TD
+
+    Bluetooth(Bluetooth):::NotStarted
+    Device1(Device 1):::NotStarted
+    Device2(Device 2):::NotStarted
+    DeviceN(Device N):::NotStarted
+
+
+    subgraph Bluetooth [Bluetooth]
+        ScanForDevices --> Connect
+        Connect --> Device1 & Device2 & DeviceN
+        subgraph Device1 [Device 1]
+            Device1.ReadGatt[Read GATT]
+            Device1.WriteGatt[Write GATT]
+            Device1.StartNotify[Start Notify]
+            Device1.StopNotify[Stop Notify]
+            Device1.Pair[Pair]
+            Device1.Unpair[Unpair]
+            Device1.ReportCharacteristics[Report Characteristics]
+        end
+        subgraph Device2 [Device 2]
+            Device2.ReadGatt[Read GATT]
+            Device2.WriteGatt[Write GATT]
+            Device2.StartNotify[Start Notify]
+            Device2.StopNotify[Stop Notify]
+            Device2.Pair[Pair]
+            Device2.Unpair[Unpair]
+            Device2.ReportCharacteristics[Report Characteristics]
+        end
+        subgraph DeviceN [Device 1]
+            DeviceN.ReadGatt[Read GATT]
+            DeviceN.WriteGatt[Write GATT]
+            DeviceN.StartNotify[Start Notify]
+            DeviceN.StopNotify[Stop Notify]
+            DeviceN.Pair[Pair]
+            DeviceN.Unpair[Unpair]
+            DeviceN.ReportCharacteristics[Report Characteristics]
+        end
+        
+        Device1 & Device2 & DeviceN --> Disconnect
+
+    end
