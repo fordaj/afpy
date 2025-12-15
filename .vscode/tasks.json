@@ -1,0 +1,22 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Debug from_yaml.py",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-m",
+        "debugpy",
+        "--listen",
+        "5678",
+        "--wait-for-client",
+        "./afpy/ffmpeg/from_yaml.py",
+        "project.yaml",
+        "value"
+      ],
+      "problemMatcher": [],
+      "isBackground": true
+    }
+  ]
+}

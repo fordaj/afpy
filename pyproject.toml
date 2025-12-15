@@ -1,0 +1,9 @@
+[project]
+name = "afpy"
+version = "0.1.0"
+dependencies = [
+  "PyYAML>=6.0",
+]
+
+[project.scripts]
+afpy = "afpy.main:main"
